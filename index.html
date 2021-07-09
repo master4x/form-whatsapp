@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HTML form with WhatsApp | Code Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .btn-custom {
+      color: #fff;
+      width: 152px;
+      height: 58px;
+      background-color: #25D366;
+      border: 1px solid #25D366
+    }
+  </style>
+</head>
+
+<body>
+  <form action="https://formspree.io/f/abcdef" method="POST" name="contact">
+    <h2 class="mb-4 appointment-head">Contact Form</h2>
+    <a href="https://github.com/master4x/form-whatsapp"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/master4x/form-whatsapp?style=social"></a>
+    <div class="row">
+      <div class="col-md-12 col-lg-6">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" class="form-control" placeholder="Full name" name="_name">
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-6">
+        <div class="form-group">
+          <label for="E-Mail">E-mail</label>
+          <input type="email" class="form-control" placeholder="e-mail" name="_email">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <div class="form-field">
+            <div class="select-wrap">
+              <div class="icon"><span class="fa fa-chevron-down"></span></div>
+              <select id="subject" class="form-control" name="_subject">
+                <option value="Wanna meetup for a pizza?">Wanna meetup for a pizza?</option>
+                <option value="Watching football game toghether?">Watching football game toghether?</option>
+                <option value="COOKIES!">COOKIES!</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="name">Message</label>
+          <textarea id="message" cols="30" rows="7" class="form-control" placeholder="Your text" name="_message"></textarea><br>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-4 rounded">
+        <input onclick="generateLink();return false;" value="Via WhatsApp" class="btn btn-custom py-3 px-4 rounded">
+      </div>
+    </div>
+  </form>
+
+  <script type="text/javascript">
+    function generateLink() {
+      var name = document.getElementById("name").value;
+      var subject = document.getElementById("subject").value;
+      var message = document.getElementById("message").value;
+      var end_url = "https://wa.me/0123456789?text=" + "*" + subject + "*%0A" + message + "%0A" + name;
+      window.open(end_url);
+    }
+  </script>
+
+</body>
+
+</html>
